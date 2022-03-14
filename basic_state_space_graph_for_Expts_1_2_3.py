@@ -4,6 +4,13 @@ class Graph:
         self.initial_state = initial_state
         self.goal_states = goal_states
     
+    def print_graph(self):
+        print(f'\nThe graph has {len(self.states)} states as follows:')
+        for s in self.states:
+            print(f'State "{s.name}" where {len(s.actions)} actions are available as follows:')
+            for a in s.actions:
+                print(f'Action "{a.name}" leads to state "{a.dest}" with cost {a.cost}')
+        
     def BFS(self):
         pass
     
@@ -70,4 +77,5 @@ if __name__ == '__main__':
                 except:
                     exit('Entered cost is not a valid number')
                 s.actions.append(Action(action_name, dest_name, cost))
-
+    
+    G.print_graph()
