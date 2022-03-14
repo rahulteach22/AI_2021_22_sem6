@@ -1,8 +1,8 @@
 class Graph:
-    def __init__(self, states=[], initial_state=None, goal_states=[]):
-        self.states = states
+    def __init__(self, states=None, initial_state=None, goal_states=None):
+        self.states = states or []
         self.initial_state = initial_state
-        self.goal_states = goal_states
+        self.goal_states = goal_states or []
     
     def print_graph(self):
         print(f'\nThe graph has {len(self.states)} states as follows:')
@@ -22,9 +22,9 @@ class Graph:
 
 
 class State:
-    def __init__(self, name, actions=[]):
+    def __init__(self, name, actions=None):
         self.name = name
-        self.actions = actions
+        self.actions = actions or []
 
 
 class Action:
